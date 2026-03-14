@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Noto Sans Light';
+  src: url('/Noto_Sans/static/NotoSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans Regular';
+  src: url('/Noto_Sans/static/NotoSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans SemiBold';
+  src: url('/Noto_Sans/static/NotoSans-SemiBold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Noto Sans TC';
+  src: url('/Noto_Sans_TC/static/NotoSansTC-Light.ttf') format('truetype');
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fdfbfa;
+  color: #000;
+}
