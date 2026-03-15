@@ -1,6 +1,6 @@
 import './App.css'
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
