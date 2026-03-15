@@ -9,6 +9,11 @@
 }
 
 @font-face {
+  font-family: 'Noto Sans Medium';
+  src: url('/Noto_Sans/static/NotoSans-Medium.ttf') format('truetype');
+}
+
+@font-face {
   font-family: 'Noto Sans SemiBold';
   src: url('/Noto_Sans/static/NotoSans-SemiBold.ttf') format('truetype');
 }

@@ -1,25 +1,75 @@
 h1 {
   font-family: 'Noto Sans SemiBold';
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #000;
 }
 
+/* switch back to normal medium if "a" in any h2 (italicized a diff from normal a) */
 h2 {
-  font-family: 'Noto Sans Regular';
+  font-family: 'Noto Sans Medium';
+  font-style: italic;
   font-size: 0.9rem;
   color: #000;
-  margin-top: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+h2::after {
+  content: '';
+  flex: 1;
+  border-top: 0.05rem solid #d7d7d7;
 }
 
 p {
   font-family: 'Noto Sans Light';
-  margin-top: 0;
 }
 
 .cname {
   font-family: 'Noto Sans TC';
   font-size: 1.5rem;
   color: #646464;
+  position: relative;
+  cursor: default;
+}
+
+.cname::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: #333;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 2;
+}
+
+.cname::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-family: 'Noto Sans Light';
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 1;
+}
+
+.cname:hover::before,
+.cname:hover::after {
+  opacity: 1;
 }
 
 .name-row {
@@ -31,18 +81,18 @@ p {
 /* line */
 hr {
   border: none;
-  border-top: 0.1rem solid #cfcfcf;
+  border-top: 0.075rem solid #cfcfcf;
   margin: 0.5rem 0 1rem 0;
 }
 
 a {
-  color: black;
+  color: #000;
   font-family: 'Noto Sans Regular';
   text-decoration: none;
 }
 
 a:hover{
-  color: gray;
+  color: #646464;
   text-decoration: underline;
 }
 
@@ -50,35 +100,37 @@ ul {
   font-family: 'Noto Sans Light';
   list-style: none;
   padding-left: 0.5rem;
-  line-height: 1.75rem;
+  line-height: 1.4;
   font-size: 0.9rem;
 }
 
 li::before {
-  content: '↳ ';
-  margin-right: 0.25rem;
+  content: '↳';
+  margin-right: 0.5rem;
 }
 
 .exp-list > li::before {
   content: none;
 }
 
-.exp-first-row {
-  margin-top: 0.25rem;
-  display: flex;
-  align-items: baseline;
+.bio-list li,
+.proj-list li {
+  padding-left: 1.2rem;
+  text-indent: -1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-.exp-first-row::before {
-  content: '↳ ';
-  flex-shrink: 0;
-  margin-right: 0.25rem;
+.sub-list li {
+  padding-left: 1.1rem;
+  text-indent: -1.1rem;
+  margin-bottom: 0.25rem;
 }
 
 .exp-row {
-  margin-top: 0.75rem;
+  margin-top: 1rem;
   display: flex;
   align-items: baseline;
+  margin-bottom: 0.50rem;
 }
 
 .exp-row::before {
@@ -88,12 +140,13 @@ li::before {
 }
 
 .exp-title {
+  font-family: 'Noto Sans Regular';
   flex: 1;
 }
 
 .date {
   flex-shrink: 0;
-  color: gray;
+  color: #646464;
 }
 
 .sub-list {
@@ -102,18 +155,90 @@ li::before {
 }
 
 .sub-list li::before {
-  content: '○ ';
+  content: '○';
+}
+
+.proj-list {
+  margin-top: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-links a {
+  font-family: 'Noto Sans Regular';
+  font-size: 0.9rem;
+  color: #000;
+}
+
+.footer-links a:hover {
+  color: #646464;
+  text-decoration: underline;
 }
 
 .footer {
   font-family: 'Noto Sans Light';
-  font-size: 0.75rem;
-  margin-top: 1rem;
-  color: gray;
+  font-size: 0.9rem; /*0.75*/
+  margin-top: 0.5rem;
+  color: #646464;
+}
+
+.page {
+  max-width: 45rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-  max-width: 45rem;
-  margin: 0 auto;
-  padding: 3rem ;
+  flex: 1;
+  margin-top: 3rem;
+}
+
+.footer-section {
+  margin: 1.5rem 0;
+  max-width: 39rem;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 1rem 2rem;
+  }
+
+  /* date drops below the title */
+  .exp-row {
+    flex-wrap: wrap;
+  }
+
+  .date {
+    flex-basis: 100%;
+    padding-left: 1.1rem;
+  }
+
+  .footer-content {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .footer {
+    text-align: center;
+  }
 }
