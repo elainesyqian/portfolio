@@ -1,13 +1,14 @@
 import './App.css'
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation'
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 function App() {
   return (
     <div className="page">
       <BackgroundGradientAnimation />
       <Analytics />
-
+      <SpeedInsights/>
       <div className="container">
       <div className="name-row">
         <h1>Elaine Qian</h1>
