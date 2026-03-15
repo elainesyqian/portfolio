@@ -1,9 +1,12 @@
 import './App.css'
+import { BackgroundGradientAnimation } from './BackgroundGradientAnimation'
 
 function App() {
   return (
     <div className="page">
-    <div className="container">
+      <BackgroundGradientAnimation />
+
+      <div className="container">
       <div className="name-row">
         <h1>Elaine Qian</h1>
         <p className='cname' data-tooltip="qián sī yuǎn">錢思遠</p>
@@ -11,7 +14,7 @@ function App() {
       <hr />
       <ul className="bio-list">
         <li><a href="https://cs.uwaterloo.ca/">cs @ uwaterloo</a></li>
-        <li><a href="https://about.rogers.com/our-impact/ted-rogers-scholarships/">ted rogers legacy scholar</a> (100k)</li>
+        <li><a href="https://about.rogers.com/our-impact/ted-rogers-scholarships/">ted rogers legacy scholar</a></li>
         <li>building the code that builds a better world 🌎</li>
         <li>i love puzzles, ultimate frisbee, cooking (eating), and frolicking in my spare time</li>
       </ul>
