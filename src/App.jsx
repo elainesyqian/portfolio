@@ -55,7 +55,7 @@ function App() {
         <div className='footer-links'>
           <a href="https://linkedin.com/in/elaineqian/">[linkedin]</a>
           <a href="https://github.com/elainesyqian/">[github]</a>
-          <a href="/resume.pdf">[resume]</a>
+          <a href="/Elaine_Qian_Resume.pdf">[resume]</a>
           <a href="mailto:elaineqian360@gmail.com">[email]</a>
         </div>
       </div>
