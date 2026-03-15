@@ -1,10 +1,12 @@
 import './App.css'
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (
     <div className="page">
       <BackgroundGradientAnimation />
+      <Analytics />
 
       <div className="container">
       <div className="name-row">
