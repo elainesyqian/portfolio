@@ -7,7 +7,7 @@ const BLOBS = [
     drift: (t) => [Math.sin(t * 0.07 + 1) * 4, -Math.cos(t * 0.1) * 3] },
   { color: 'rgba(183, 229, 217, 0.6)', baseX: 5, baseY: 65, phase: 4.2, w: '55%', h: '35%',
     drift: (t) => [Math.cos(t * 0.09 + 2) * 3, Math.sin(t * 0.12) * 4] },
-  { color: 'rgba(245, 231, 187, 0.5)', baseX: 50, baseY: 0, phase: 1.5, w: '60%', h: '30%',
+  { color: 'rgba(242, 224, 167, 0.5)', baseX: 50, baseY: 0, phase: 1.5, w: '60%', h: '30%',
     drift: (t) => [-Math.sin(t * 0.1) * 4, Math.cos(t * 0.07 + 3) * 3] },
 ]
 

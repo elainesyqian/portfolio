@@ -1,0 +1,40 @@
+.nav-buttons {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.nav-button {
+  font-family: 'Noto Sans Regular';
+  font-size: 1rem;
+  color: #000;
+  text-decoration: none;
+  padding: 0.25rem 0;
+  transition: color 0.15s ease;
+}
+
+.nav-button:hover {
+  color: #646464;
+  text-decoration: underline;
+}
+
+.nav-button.active {
+  font-family: 'Noto Sans Regular';
+  color: #000;
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .nav-buttons {
+    top: 1rem;
+    right: 1rem;
+    gap: 0.75rem;
+  }
+
+  .nav-button {
+    font-size: 0.8rem;
+  }
+}
